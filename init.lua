@@ -17,8 +17,10 @@ function file_exists(filename)
   end
 end
 
+pressed = false
+
 function run_scripts()
-  if not button_pressed then
+  if not pressed then
     -- Check files exist
     if not file_exists(CONFIG_SCRIPT) then
       print ("Config script \""..CONFIG_SCRIPT.."\" not found.")
@@ -36,7 +38,6 @@ function run_scripts()
 end
 
 -- Main code
-pressed = false
 
 -- Setup button interrupt
 gpio.mode(USER_BUTTON, gpio.INT)
@@ -45,7 +46,6 @@ gpio.trig(USER_BUTTON, "down",
     pressed = true
     print("Execution interrupted.")
     gpio.mode(USER_BUTTON, gpio.FLOAT)
-    tmr.stop(0)
   end
 )
 

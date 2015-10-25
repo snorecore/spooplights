@@ -16,3 +16,8 @@ it'll stop the script from running.
 
 Why Spooplights? This code was written to turn a spoopy/spooky plastic ghost
 from Poundland into a CheerLight.
+
+NOTE: These scripts will not run on the official NodeMCU builds. Too many
+modules are included, leaving insufficient memory for this code. I recommend
+using a custom build from http://frightanic.com/nodemcu-custom-build/,
+including these modules: "node,file,gpio,wifi,net,pwm,tmr,uart,bit,mqtt".

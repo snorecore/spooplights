@@ -2,15 +2,18 @@
 -- Test PWM
 -- Created: Sun 18th Oct 2015
 
+
 local LED = require "LED"
 
-led = LED(RED_PIN, GREEN_PIN, BLUE_PIN, COMMON_ANODE)
+local led = LED(RED_PIN, GREEN_PIN, BLUE_PIN, COMMON_ANODE)
+
 led:start_PWM()
 
 -- Rainbow Cycle
 -- Ported and adapted from Python, originally from Adafruit LEDPixel Code
-i = 0
+local i = 0
 function rainbow_cycle()
+  local r, g, b, j
   if i < 85 then
     r = i * 3
     g = 255 - i * 3
@@ -30,7 +33,7 @@ function rainbow_cycle()
   led:set_col(r, g, b)
 
   i = i + 1
-  if i >= 256 then
+  if i > 255 then
     i = 0
   end
 end
