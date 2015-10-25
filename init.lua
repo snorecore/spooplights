@@ -44,6 +44,7 @@ gpio.trig(USER_BUTTON, "down",
   function()
     pressed = true
     print("Execution interrupted.")
+    gpio.mode(USER_BUTTON, gpio.FLOAT)
     tmr.stop(0)
   end
 )
