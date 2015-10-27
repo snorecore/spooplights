@@ -10,9 +10,10 @@ not be very robust, so use it at your peril ;) 👻
 
 To use the script copy init_config_example.lua to init_config.lua, fill in your
 WiFi details, and upload all the lua files to the ESP8266 using the Python-based
-NodeMCU Uploader (https://github.com/kmpm/nodemcu-uploader/). If anything goes
-wrong, press the user button within a few seconds of the module booting and
-it'll stop the script from running.
+NodeMCU Uploader (https://github.com/kmpm/nodemcu-uploader/). I had trouble with
+NodeMCU Uploader on Windows, so try luatool (https://github.com/4refr0nt/luatool)
+if you do too. If anything goes wrong, press the user button within a few seconds
+of the module booting and it'll stop the script from running.
 
 Why Spooplights? This code was written to turn a spoopy/spooky plastic ghost
 from Poundland into a CheerLight.
